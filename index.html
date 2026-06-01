@@ -13,15 +13,15 @@
         <span class="tag">EletroBásica</span>
         <h1>Índice técnico do projeto</h1>
         <p>
-          Guia central para organizar estudo e prática de eletrônica: ferramentas, multímetro, componentes, testes,
-          base teórica, física aplicada e diagnóstico seguro.
+          Guia central para iniciar em eletrônica e elétrica com segurança: fundamentos, ferramentas, multímetro,
+          componentes, testes práticos, leituras confiáveis e caminhos de formação próximos a Manoel Ribas-PR.
         </p>
         <div class="pill-row">
           <span class="pill">Baixa tensão</span>
           <span class="pill">Diagnóstico</span>
           <span class="pill">Componentes</span>
           <span class="pill">Multímetro</span>
-          <span class="pill">Física aplicada</span>
+          <span class="pill">Carreira técnica</span>
         </div>
       </div>
       <figure class="hero-photo">
@@ -32,17 +32,15 @@
 
   <nav aria-label="Navegação principal">
     <div class="container">
-      <a href="#visao-geral">Visão geral</a>
-      <a href="#seguranca">Segurança</a>
-      <a href="#ferramentas">Ferramentas</a>
-      <a href="#multimetro">Multímetro</a>
-      <a href="#fotos">Fotos</a>
-      <a href="#componentes">Componentes</a>
-      <a href="#testes">Testes</a>
-      <a href="#eletronica">Base eletrônica</a>
-      <a href="#fisica">Física aplicada</a>
-      <a href="#diagnostico">Diagnóstico</a>
-      <a href="#projetos">Ramificações</a>
+      <a href="index.html#visao-geral">Visão geral</a>
+      <a href="index.html#seguranca">Segurança</a>
+      <a href="multimetro.html">Multímetro</a>
+      <a href="componentes.html">Componentes</a>
+      <a href="testes.html">Testes</a>
+      <a href="index.html#fundamentos">Fundamentos</a>
+      <a href="index.html#artigos">Artigos</a>
+      <a href="index.html#faculdades">Faculdades</a>
+      <a href="index.html#roteiro">Roteiro</a>
     </div>
   </nav>
 
@@ -50,22 +48,28 @@
     <section id="visao-geral">
       <h2>1. Visão geral</h2>
       <p>
-        Este projeto funciona como uma árvore de conhecimento. A ideia é separar a eletrônica em blocos: teoria,
-        ferramentas, componentes, testes práticos e aplicações. Isso evita estudar tudo misturado e facilita encontrar
-        exatamente o que precisa na hora de montar ou diagnosticar um circuito.
+        O projeto foi separado em páginas para facilitar a evolução do conteúdo: o índice mantém o mapa de estudos,
+        enquanto os arquivos específicos aprofundam multímetro, componentes e testes de bancada. A ordem recomendada é:
+        segurança, conceitos básicos, identificação de componentes, uso do multímetro e só então diagnóstico em circuitos.
       </p>
-      <div class="grid">
-        <article class="card">
-          <h3>Objetivo</h3>
-          <p>Montar uma base técnica para entender, testar e documentar componentes e circuitos eletrônicos.</p>
+      <div class="grid feature-grid">
+        <article class="card feature-card">
+          <span class="card-kicker">Página dedicada</span>
+          <h3>Multímetro</h3>
+          <p>Aprenda bornes, escalas, leitura de display, erros críticos e medições em baixa tensão.</p>
+          <a class="button-link" href="multimetro.html">Abrir guia do multímetro</a>
         </article>
-        <article class="card">
-          <h3>Método</h3>
-          <p>Estudar por módulos: conceito, identificação visual, função no circuito, falhas comuns e teste seguro.</p>
+        <article class="card feature-card">
+          <span class="card-kicker">Página dedicada</span>
+          <h3>Componentes</h3>
+          <p>Veja função, polaridade, falhas comuns e testes iniciais de resistores, capacitores, diodos e transistores.</p>
+          <a class="button-link" href="componentes.html">Abrir guia de componentes</a>
         </article>
-        <article class="card">
-          <h3>Aplicação</h3>
-          <p>Uso em manutenção, prototipagem, placas eletrônicas simples, sensores, fontes e sistemas de baixa tensão.</p>
+        <article class="card feature-card">
+          <span class="card-kicker">Página dedicada</span>
+          <h3>Testes práticos</h3>
+          <p>Use roteiros de bancada para continuidade, curto, fontes, LEDs, sensores e registro de diagnóstico.</p>
+          <a class="button-link" href="testes.html">Abrir laboratório de testes</a>
         </article>
       </div>
     </section>
@@ -74,414 +78,167 @@
       <h2>2. Segurança antes de testar</h2>
       <div class="danger">
         Não faça testes energizados diretamente na tomada, rede 127/220 V, fontes chaveadas abertas, micro-ondas,
-        capacitores grandes ou circuitos de alta tensão sem supervisão técnica adequada. O foco deste guia é baixa tensão
-        e verificação com o equipamento desligado sempre que possível.
+        capacitores grandes ou circuitos de alta tensão sem supervisão técnica adequada. O foco deste guia é baixa tensão,
+        medição com o circuito desligado sempre que possível e uso de fonte DC limitada em corrente.
       </div>
-      <ul>
-        <li>Antes de medir resistência, continuidade ou diodo, desligue o circuito e remova a alimentação.</li>
-        <li>Não coloque o multímetro em escala de corrente diretamente em paralelo com fonte, bateria ou tomada.</li>
-        <li>Use fonte de bancada DC com limitação de corrente para testes em baixa tensão.</li>
-        <li>Confirme a escala correta no multímetro antes de encostar as pontas de prova.</li>
-        <li>Em placas desconhecidas, comece por inspeção visual e testes sem alimentação.</li>
-        <li>Capacitores podem manter carga após desligados. Verifique tensão nos terminais antes de tocar.</li>
-      </ul>
-    </section>
-
-    <section id="ferramentas">
-      <h2>3. Ferramentas necessárias</h2>
       <div class="grid">
         <article class="card">
-          <h3>Básicas</h3>
+          <h3>Checklist obrigatório</h3>
           <ul>
-            <li>Multímetro digital com tensão, resistência, continuidade e teste de diodo.</li>
-            <li>Fonte de bancada DC com ajuste de tensão e limitação de corrente.</li>
-            <li>Protoboard, jumpers e kit de resistores.</li>
-            <li>Alicate de corte, alicate de bico e desencapador.</li>
-            <li>Chaves, pinças e lupa.</li>
+            <li>Desligue a alimentação antes de medir resistência, continuidade ou diodo.</li>
+            <li>Confirme se a ponta vermelha está no borne correto antes de medir corrente.</li>
+            <li>Comece por inspeção visual: trilha rompida, oxidação, solda fria e componente escurecido.</li>
+            <li>Em placa desconhecida, procure curto entre VCC e GND antes de energizar.</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Soldagem</h3>
+          <h3>Erros que queimam equipamento</h3>
           <ul>
-            <li>Ferro de solda com suporte.</li>
-            <li>Estanho para eletrônica.</li>
-            <li>Fluxo, malha dessoldadora ou sugador.</li>
-            <li>Esponja metálica ou úmida para limpeza da ponta.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Diagnóstico avançado</h3>
-          <ul>
-            <li>Osciloscópio para visualizar sinais.</li>
-            <li>Capacímetro ou medidor LCR.</li>
-            <li>Gerador de sinais.</li>
-            <li>Carga eletrônica ou resistor de potência para testar fontes DC.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Proteção</h3>
-          <ul>
-            <li>Óculos de proteção.</li>
-            <li>Tapete antiestático, se disponível.</li>
-            <li>Organizador de peças.</li>
-            <li>Ambiente seco, limpo e bem iluminado.</li>
+            <li>Colocar o multímetro em corrente e ligar em paralelo com uma fonte.</li>
+            <li>Medir capacitor carregado na escala de capacitância ou resistência.</li>
+            <li>Usar pontas sem isolação em rede elétrica.</li>
+            <li>Encostar pontas de prova e fechar curto entre pinos próximos.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section id="multimetro">
-      <h2>4. Multímetro: guia prático e técnico</h2>
-      <p>
-        O multímetro é o principal instrumento de diagnóstico da eletrônica básica. Ele combina funções de voltímetro,
-        amperímetro e ohmímetro. Em modelos digitais comuns, também pode medir continuidade, queda de diodo, capacitância,
-        frequência, temperatura e ganho de transistor, dependendo do modelo.
-      </p>
-
+    <section id="fundamentos">
+      <h2>3. Fundamentos que sustentam a prática</h2>
       <div class="grid">
         <article class="card">
-          <h3>O que ele mede</h3>
-          <ul>
-            <li><strong>Tensão DC:</strong> baterias, fontes, reguladores, linhas VCC e GND.</li>
-            <li><strong>Tensão AC:</strong> sinais alternados e rede elétrica apenas com segurança e categoria correta.</li>
-            <li><strong>Resistência:</strong> resistores, sensores resistivos, bobinas e trilhas.</li>
-            <li><strong>Corrente:</strong> consumo de um circuito em série com a carga.</li>
-            <li><strong>Continuidade:</strong> trilhas, cabos, fusíveis, chaves e soldas.</li>
-            <li><strong>Diodo:</strong> queda direta de diodos, LEDs e junções de transistores.</li>
-          </ul>
+          <h3>Tensão, corrente e resistência</h3>
+          <p>
+            Tensão é diferença de potencial elétrico; corrente é fluxo de carga; resistência é oposição à passagem da
+            corrente. A Lei de Ohm conecta as três grandezas: <code>V = R × I</code>.
+          </p>
         </article>
         <article class="card">
-          <h3>Partes principais</h3>
-          <ul>
-            <li><strong>Display:</strong> mostra valor, unidade, sinal negativo, overload e às vezes barra gráfica.</li>
-            <li><strong>Seletor:</strong> escolhe grandeza e escala.</li>
-            <li><strong>Ponta preta:</strong> normalmente no borne COM.</li>
-            <li><strong>Ponta vermelha:</strong> muda entre V/Ω, mA/µA ou 10A conforme a medição.</li>
-            <li><strong>Fusíveis internos:</strong> protegem as escalas de corrente quando o multímetro é decente.</li>
-          </ul>
+          <h3>Potência e aquecimento</h3>
+          <p>
+            Potência indica a taxa de conversão de energia: <code>P = V × I</code>. Resistores, reguladores e transistores
+            aquecem quando dissipam potência acima do limite físico do encapsulamento.
+          </p>
         </article>
         <article class="card">
-          <h3>Bornes comuns</h3>
-          <ul>
-            <li><code>COM</code>: comum, referência negativa da medição.</li>
-            <li><code>VΩHz</code>: tensão, resistência, continuidade, diodo, frequência e capacitância.</li>
-            <li><code>mA/µA</code>: correntes pequenas, geralmente protegidas por fusível.</li>
-            <li><code>10A</code> ou <code>20A</code>: corrente alta por pouco tempo, conforme o manual.</li>
-          </ul>
+          <h3>Série e paralelo</h3>
+          <p>
+            Em série, a corrente é a mesma e a tensão se divide. Em paralelo, a tensão é a mesma e a corrente se divide.
+            Esse raciocínio ajuda a prever queda de tensão, consumo e falhas.
+          </p>
         </article>
         <article class="card">
-          <h3>Leituras do display</h3>
-          <ul>
-            <li><code>OL</code> ou <code>1</code>: fora de escala, aberto ou resistência muito alta.</li>
-            <li><code>-</code>: polaridade invertida em DC.</li>
-            <li><code>m</code>: mili, equivale a 0,001.</li>
-            <li><code>k</code>: quilo, equivale a 1.000.</li>
-            <li><code>M</code>: mega, equivale a 1.000.000.</li>
-          </ul>
+          <h3>Referência de medição</h3>
+          <p>
+            Toda tensão é medida entre dois pontos. Em eletrônica, normalmente a referência é o GND. Sem entender a
+            referência, uma leitura aparentemente correta pode levar a diagnóstico errado.
+          </p>
         </article>
       </div>
+    </section>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Função</th>
-              <th>Como ligar as pontas</th>
-              <th>Como usar</th>
-              <th>Erro crítico</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Tensão DC</td>
-              <td>Preta no COM, vermelha no VΩ.</td>
-              <td>Medir em paralelo com o ponto do circuito: vermelho no positivo, preto no GND.</td>
-              <td>Usar escala errada baixa em multímetro manual ou encostar pontas causando curto.</td>
-            </tr>
-            <tr>
-              <td>Tensão AC</td>
-              <td>Preta no COM, vermelha no VΩ.</td>
-              <td>Medir em paralelo. Em rede elétrica, só com instrumento adequado, pontas isoladas e supervisão técnica.</td>
-              <td>Medir rede elétrica com multímetro sem categoria CAT adequada.</td>
-            </tr>
-            <tr>
-              <td>Resistência</td>
-              <td>Preta no COM, vermelha no VΩ.</td>
-              <td>Com circuito desligado, medir entre os terminais do componente.</td>
-              <td>Medir resistência em circuito energizado.</td>
-            </tr>
-            <tr>
-              <td>Continuidade</td>
-              <td>Preta no COM, vermelha no VΩ.</td>
-              <td>Com circuito desligado, encostar as pontas nos extremos do caminho elétrico.</td>
-              <td>Confiar só no bip: alguns circuitos bipam por caminhos paralelos.</td>
-            </tr>
-            <tr>
-              <td>Diodo</td>
-              <td>Preta no COM, vermelha no VΩ.</td>
-              <td>Medir nos dois sentidos. Em silício comum, queda direta típica fica perto de 0,5 a 0,8 V.</td>
-              <td>Interpretar leitura em placa sem considerar componentes em paralelo.</td>
-            </tr>
-            <tr>
-              <td>Corrente</td>
-              <td>Preta no COM, vermelha em mA/µA ou 10A.</td>
-              <td>Abrir o circuito e colocar o multímetro em série com a carga.</td>
-              <td>Colocar o multímetro em escala de corrente diretamente em paralelo com fonte ou tomada.</td>
-            </tr>
-            <tr>
-              <td>Capacitância</td>
-              <td>Preta no COM, vermelha no VΩ/Cx, conforme o modelo.</td>
-              <td>Descarregar o capacitor, remover ao menos um terminal do circuito e medir.</td>
-              <td>Medir capacitor carregado ou em paralelo com outros componentes.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Especificações que importam</h3>
+    <section id="artigos">
+      <h2>4. Artigos e leituras recomendadas</h2>
+      <p>
+        As leituras abaixo ajudam a complementar a prática com teoria. Use-as como fonte de consulta quando aparecer uma
+        dúvida específica durante uma medição ou montagem.
+      </p>
       <div class="grid">
         <article class="card">
-          <h4>Resolução</h4>
-          <p>É o menor incremento que o display consegue mostrar. Um multímetro pode mostrar, por exemplo, variação de 0,01 V ou 0,001 V dependendo da escala.</p>
+          <h3>Conceitos elétricos</h3>
+          <ul class="resource-list">
+            <li><a href="https://pt.wikipedia.org/wiki/Lei_de_Ohm" target="_blank" rel="noreferrer">Lei de Ohm</a> — bom ponto de partida para tensão, corrente e resistência.</li>
+            <li><a href="https://pt.wikipedia.org/wiki/Pot%C3%AAncia_el%C3%A9trica" target="_blank" rel="noreferrer">Potência elétrica</a> — útil para entender aquecimento e escolha de resistores.</li>
+            <li><a href="https://pt.wikipedia.org/wiki/Leis_de_Kirchhoff" target="_blank" rel="noreferrer">Leis de Kirchhoff</a> — base para analisar nós e malhas.</li>
+          </ul>
         </article>
         <article class="card">
-          <h4>Precisão</h4>
-          <p>É o erro máximo esperado. Exemplo comum: ±0,5% da leitura em tensão DC em modelos simples. Precisão depende da escala e do manual.</p>
+          <h3>Eletrônica aplicada</h3>
+          <ul class="resource-list">
+            <li><a href="https://www.allaboutcircuits.com/textbook/" target="_blank" rel="noreferrer">All About Circuits Textbook</a> — livro online com fundamentos e exemplos.</li>
+            <li><a href="https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/all" target="_blank" rel="noreferrer">SparkFun: How to Use a Multimeter</a> — tutorial prático de multímetro.</li>
+            <li><a href="https://learn.adafruit.com/multimeters" target="_blank" rel="noreferrer">Adafruit: Multimeters</a> — guia introdutório com foco em bancada.</li>
+          </ul>
         </article>
         <article class="card">
-          <h4>Impedância de entrada</h4>
-          <p>Em tensão, multímetros digitais comuns ficam em torno de 10 MΩ. Quanto maior, menos o instrumento carrega o circuito medido.</p>
+          <h3>Normas e segurança</h3>
+          <ul class="resource-list">
+            <li><a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-10" target="_blank" rel="noreferrer">NR-10</a> — referência brasileira para segurança em instalações e serviços com eletricidade.</li>
+            <li><a href="https://www.inmetro.gov.br/" target="_blank" rel="noreferrer">Inmetro</a> — consulte certificação, qualidade e orientações de instrumentos.</li>
+          </ul>
         </article>
-        <article class="card">
-          <h4>True RMS</h4>
-          <p>Melhora leitura de AC quando a forma de onda não é senoidal pura. Útil em fontes chaveadas, inversores e cargas eletrônicas.</p>
-        </article>
-        <article class="card">
-          <h4>Categoria CAT</h4>
-          <p>CAT I, II, III e IV indicam o ambiente elétrico para o qual o instrumento foi projetado. Quanto maior a categoria, mais severos os transientes suportados.</p>
-        </article>
-        <article class="card">
-          <h4>Fusível HRC</h4>
-          <p>Em escalas de corrente, fusível bom reduz risco em erro de ligação. Multímetro muito barato costuma economizar justamente onde não deveria.</p>
-        </article>
-      </div>
-
-      <div class="danger">
-        Regra principal: corrente se mede em série; tensão se mede em paralelo. Confundir isso é uma das formas mais rápidas
-        de queimar fusível, ponta de prova, trilha, componente ou o próprio multímetro.
-      </div>
-
-      <div class="ok">
-        Checklist rápido: ponta preta no COM, ponta vermelha no borne correto, seletor na função correta, escala maior que o valor esperado,
-        circuito desligado para resistência/continuidade/diodo e uma mão longe do circuito em medições potencialmente perigosas.
       </div>
     </section>
 
-    <section id="fotos">
-      <h2>5. Fotos dos componentes e do multímetro</h2>
+    <section id="faculdades">
+      <h2>5. Indicações de faculdades e cursos próximos a Manoel Ribas-PR</h2>
       <p>
-        Galeria visual para identificar rapidamente componentes comuns. As imagens são carregadas de repositórios públicos da Wikimedia/Wikipedia.
-      </p>
-      <div class="photo-grid">
-        <article class="photo-card">
-          <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Digital_Multimeter_Aka.jpg/250px-Digital_Multimeter_Aka.jpg" alt="Multímetro digital" />
-          <div>
-            <h3>Multímetro digital</h3>
-            <p>Instrumento usado para tensão, corrente, resistência, continuidade e teste de diodo.</p>
-            <small>Fonte: Wikimedia Commons / Wikipedia</small>
-          </div>
-        </article>
-        <article class="photo-card">
-          <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Electronic-Axial-Lead-Resistors-Array.png/250px-Electronic-Axial-Lead-Resistors-Array.png" alt="Resistores axiais" />
-          <div>
-            <h3>Resistores</h3>
-            <p>Limitam corrente, dividem tensão e fazem polarização de circuitos.</p>
-            <small>Fonte: Wikimedia Commons / Wikipedia</small>
-          </div>
-        </article>
-        <article class="photo-card">
-          <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Condensators.JPG/330px-Condensators.JPG" alt="Capacitores de vários tipos" />
-          <div>
-            <h3>Capacitores</h3>
-            <p>Armazenam carga, filtram ripple, acoplam sinais e participam de temporizações.</p>
-            <small>Fonte: Wikimedia Commons / Wikipedia</small>
-          </div>
-        </article>
-        <article class="photo-card">
-          <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Diode_pinout_en_fr.svg/120px-Diode_pinout_en_fr.svg.png" alt="Diodo e indicação de polaridade" />
-          <div>
-            <h3>Diodo</h3>
-            <p>Conduz principalmente em um sentido e bloqueia no sentido reverso.</p>
-            <small>Fonte: Wikimedia Commons / Wikipedia</small>
-          </div>
-        </article>
-        <article class="photo-card">
-          <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/RBG-LED.jpg/250px-RBG-LED.jpg" alt="LEDs coloridos" />
-          <div>
-            <h3>LED</h3>
-            <p>Diodo emissor de luz. Precisa de limitação de corrente para não queimar.</p>
-            <small>Fonte: Wikimedia Commons / Wikipedia</small>
-          </div>
-        </article>
-        <article class="photo-card">
-          <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Delta_Electronics_DPS-350FB_A_-_board_1_-_OEG_SDT-SS-112M_-_case_removed-3045.jpg/250px-Delta_Electronics_DPS-350FB_A_-_board_1_-_OEG_SDT-SS-112M_-_case_removed-3045.jpg" alt="Relé eletromecânico aberto" />
-          <div>
-            <h3>Relé</h3>
-            <p>Chave eletromecânica acionada por bobina para controlar contatos isolados.</p>
-            <small>Fonte: Wikimedia Commons / Wikipedia</small>
-          </div>
-        </article>
-        <article class="photo-card">
-          <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Thermal_cutoff.jpg/250px-Thermal_cutoff.jpg" alt="Fusíveis térmicos" />
-          <div>
-            <h3>Fusível térmico</h3>
-            <p>Proteção que abre o circuito quando a temperatura passa do limite especificado.</p>
-            <small>Fonte: Wikimedia Commons / Wikipedia</small>
-          </div>
-        </article>
-      </div>
-      <p class="source-note">
-        Observação: em alguns casos a imagem é representativa do tipo de componente, não de um modelo específico.
-      </p>
-    </section>
-
-    <section id="componentes">
-      <h2>6. Tipos de componentes</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Componente</th>
-              <th>Função</th>
-              <th>Falhas comuns</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Resistor</td><td>Limita corrente, divide tensão e polariza circuitos.</td><td>Aberto, valor alterado, superaquecimento.</td></tr>
-            <tr><td>Potenciômetro</td><td>Resistência variável para ajuste de sinal, volume ou referência.</td><td>Mau contato, trilha gasta, variação instável.</td></tr>
-            <tr><td>Capacitor</td><td>Armazena carga, filtra ripple, acopla sinais e temporiza.</td><td>Curto, fuga, ESR alto, capacitância baixa.</td></tr>
-            <tr><td>Diodo</td><td>Conduz em um sentido e bloqueia no outro.</td><td>Curto, aberto, fuga reversa.</td></tr>
-            <tr><td>LED</td><td>Emite luz quando polarizado corretamente.</td><td>Aberto, queimado por excesso de corrente.</td></tr>
-            <tr><td>Transistor BJT</td><td>Amplifica corrente ou atua como chave eletrônica.</td><td>Junção em curto, aberto, fuga entre terminais.</td></tr>
-            <tr><td>MOSFET</td><td>Chaveamento eficiente controlado por tensão no gate.</td><td>Curto entre drain-source, gate danificado por estática.</td></tr>
-            <tr><td>Relé</td><td>Chave eletromecânica acionada por bobina.</td><td>Bobina aberta, contatos carbonizados, travamento mecânico.</td></tr>
-            <tr><td>Fusível</td><td>Protege contra sobrecorrente.</td><td>Aberto por falha real ou dimensionamento inadequado.</td></tr>
-            <tr><td>Sensor NTC/PTC</td><td>Resistência dependente da temperatura.</td><td>Aberto, valor fora da curva, mau contato.</td></tr>
-            <tr><td>Regulador de tensão</td><td>Mantém tensão de saída estável.</td><td>Saída baixa, aquecimento, curto interno.</td></tr>
-            <tr><td>Microcontrolador</td><td>Executa lógica programada e controla entradas/saídas.</td><td>Alimentação incorreta, porta queimada, firmware ausente.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="testes">
-      <h2>7. Como testar cada componente</h2>
-      <p>
-        Os testes abaixo são uma base prática. Sempre que possível, teste o componente fora do circuito, porque outros
-        componentes em paralelo podem alterar a leitura.
+        Para quem está em Manoel Ribas, vale comparar distância, turno, custo, forma de ingresso e quantidade de laboratório.
+        As opções abaixo foram organizadas por proximidade e aderência a elétrica, eletrônica, eletrotécnica ou tecnologia.
       </p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Item</th>
-              <th>Ferramenta</th>
-              <th>Teste seguro</th>
-              <th>Resultado esperado</th>
+              <th>Instituição</th>
+              <th>Cidade</th>
+              <th>Por que olhar</th>
+              <th>Link</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Resistor</td><td>Multímetro em Ω</td><td>Medir entre os dois terminais com circuito desligado.</td><td>Valor próximo ao código de cores ou valor impresso, dentro da tolerância.</td></tr>
-            <tr><td>Potenciômetro</td><td>Multímetro em Ω</td><td>Medir extremos para valor total e cursor para variação.</td><td>Variação progressiva, sem saltos bruscos ou interrupções.</td></tr>
-            <tr><td>Diodo comum</td><td>Escala de diodo</td><td>Medir direto e reverso.</td><td>Conduz em um sentido, geralmente 0,5 a 0,8 V em diodo de silício, e bloqueia no outro.</td></tr>
-            <tr><td>LED</td><td>Escala de diodo ou fonte DC limitada</td><td>Testar com corrente limitada e resistor em série.</td><td>Acende apenas na polarização correta.</td></tr>
-            <tr><td>Capacitor pequeno</td><td>Capacímetro/LCR</td><td>Verificar capacitância e, se possível, ESR.</td><td>Valor próximo ao nominal. Curto entre terminais indica defeito.</td></tr>
-            <tr><td>Transistor BJT</td><td>Escala de diodo</td><td>Testar junções base-emissor e base-coletor.</td><td>Comportamento parecido com dois diodos ligados à base.</td></tr>
-            <tr><td>MOSFET</td><td>Multímetro + circuito simples de teste</td><td>Verificar curto drain-source e isolamento do gate em baixa tensão.</td><td>Sem curto direto entre drain-source. Gate não deve ter continuidade direta com os demais terminais.</td></tr>
-            <tr><td>Relé</td><td>Multímetro + fonte DC compatível</td><td>Medir bobina e acionar com tensão nominal em corrente limitada.</td><td>Bobina com resistência definida e contatos alternando entre NA/NF.</td></tr>
-            <tr><td>Fusível</td><td>Continuidade</td><td>Medir fora do circuito ou com equipamento desligado.</td><td>Fusível bom apresenta continuidade; aberto indica queima.</td></tr>
-            <tr><td>Chave/botão</td><td>Continuidade</td><td>Medir terminais enquanto aciona.</td><td>Alterna corretamente entre aberto e fechado.</td></tr>
-            <tr><td>Sensor NTC</td><td>Multímetro em Ω</td><td>Medir resistência em temperatura ambiente e observar variação com leve aquecimento externo seguro.</td><td>NTC reduz resistência quando a temperatura sobe.</td></tr>
-            <tr><td>Regulador DC</td><td>Fonte DC + multímetro</td><td>Aplicar tensão de entrada compatível em baixa tensão e medir saída.</td><td>Saída estável no valor nominal, respeitando corrente e dissipação.</td></tr>
+            <tr>
+              <td>IFPR Campus Ivaiporã</td>
+              <td>Ivaiporã-PR</td>
+              <td>Boa alternativa regional para formação técnica; pesquise editais e cursos do eixo de eletrotécnica/eletroeletrônica.</td>
+              <td><a href="https://ifprivp.edupage.org/a/nossos-cursos" target="_blank" rel="noreferrer">Cursos do campus</a></td>
+            </tr>
+            <tr>
+              <td>Faculdade Guarapuava</td>
+              <td>Guarapuava-PR</td>
+              <td>Oferta Engenharia Elétrica, opção direta para quem quer graduação presencial com foco profissional.</td>
+              <td><a href="https://faculdadeguarapuava.edu.br/cursos/engenharia-eletrica/" target="_blank" rel="noreferrer">Engenharia Elétrica</a></td>
+            </tr>
+            <tr>
+              <td>UNICENTRO</td>
+              <td>Guarapuava-PR</td>
+              <td>Universidade pública estadual; vale verificar cursos de exatas, física, computação, engenharia e possibilidades de iniciação científica.</td>
+              <td><a href="https://www3.unicentro.br/cursos/" target="_blank" rel="noreferrer">Lista de cursos</a></td>
+            </tr>
+            <tr>
+              <td>UTFPR Campus Campo Mourão</td>
+              <td>Campo Mourão-PR</td>
+              <td>Indicação forte para quem deseja Engenharia Eletrônica com base em sistemas eletroeletrônicos, medição e controle.</td>
+              <td><a href="https://www.utfpr.edu.br/cursos/graduacao/bacharelado/engenharia-eletronica-1" target="_blank" rel="noreferrer">Engenharia Eletrônica</a></td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div class="notice">
-        Em manutenção real, uma peça que queimou pode ser consequência, não causa. Trocar fusível, resistor ou transistor
-        sem procurar curto, sobrecarga ou erro de alimentação pode fazer o defeito voltar imediatamente.
+        Dica: antes de escolher, abra a matriz curricular e procure disciplinas como circuitos elétricos, eletrônica analógica,
+        eletrônica digital, máquinas elétricas, instalações elétricas, instrumentação, controle, laboratório e estágio.
       </div>
     </section>
 
-    <section id="eletronica">
-      <h2>8. Base da eletrônica</h2>
-      <div class="grid">
-        <article class="card"><h3>Tensão, corrente e resistência</h3><p>Tensão é diferença de potencial elétrico. Corrente é fluxo de carga. Resistência é oposição à passagem da corrente. A relação central é a Lei de Ohm: <code>V = R × I</code>.</p></article>
-        <article class="card"><h3>Potência elétrica</h3><p>Potência indica a taxa de conversão de energia. Fórmulas úteis: <code>P = V × I</code>, <code>P = R × I²</code> e <code>P = V² / R</code>. Resistores e reguladores aquecem quando dissipam potência.</p></article>
-        <article class="card"><h3>Série e paralelo</h3><p>Em série, a corrente é a mesma e as tensões se dividem. Em paralelo, a tensão é a mesma e as correntes se dividem entre os ramos.</p></article>
-        <article class="card"><h3>Corrente contínua e alternada</h3><p>DC tem polaridade definida. AC varia no tempo. Circuitos eletrônicos geralmente trabalham em DC depois de retificação, filtragem e regulação.</p></article>
-        <article class="card"><h3>Leis de Kirchhoff</h3><p>A soma das correntes em um nó é conservada. A soma das tensões em uma malha fechada também fecha o balanço elétrico. Isso permite analisar circuitos sem adivinhação.</p></article>
-        <article class="card"><h3>Sinal, ruído e referência</h3><p>Todo sinal é medido em relação a uma referência, normalmente GND. Ruído pode vir de fonte ruim, aterramento mal feito, chaveamento ou cabos longos.</p></article>
-      </div>
-    </section>
-
-    <section id="fisica">
-      <h2>9. Física aplicada à eletrônica</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Conceito físico</th><th>Ligação com eletrônica</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Carga elétrica</td><td>É a propriedade que permite interação elétrica. Em condutores metálicos, elétrons livres participam da corrente.</td></tr>
-            <tr><td>Campo elétrico</td><td>É o que força cargas a se moverem quando há diferença de potencial.</td></tr>
-            <tr><td>Energia potencial elétrica</td><td>Explica por que tensão representa energia por unidade de carga.</td></tr>
-            <tr><td>Efeito Joule</td><td>Corrente em resistência gera calor. É essencial para entender aquecimento, perdas e queima de componentes.</td></tr>
-            <tr><td>Magnetismo</td><td>Corrente elétrica cria campo magnético. Isso aparece em relés, motores, transformadores e indutores.</td></tr>
-            <tr><td>Indução eletromagnética</td><td>Variação de campo magnético pode gerar tensão. Base de transformadores, bobinas e motores.</td></tr>
-            <tr><td>Capacitância</td><td>Capacitores armazenam energia em campo elétrico e se opõem a variações bruscas de tensão.</td></tr>
-            <tr><td>Semicondutores</td><td>Diodos, transistores e CIs usam materiais cuja condução pode ser controlada por dopagem e polarização.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="diagnostico">
-      <h2>10. Roteiro de diagnóstico</h2>
-      <ol>
-        <li><strong>Identifique o sintoma:</strong> não liga, liga e desliga, aquece, não carrega, saída instável, ruído ou componente queimado.</li>
-        <li><strong>Inspecione visualmente:</strong> trilha rompida, solda fria, oxidação, capacitor estufado, componente escurecido.</li>
-        <li><strong>Teste alimentação:</strong> verifique entrada, reguladores, curto entre VCC e GND e consumo anormal.</li>
-        <li><strong>Divida em blocos:</strong> fonte, controle, potência, sensores, comunicação e saída.</li>
-        <li><strong>Compare com valor esperado:</strong> tensão nominal, resistência típica, queda de diodo, continuidade e sinal.</li>
-        <li><strong>Troque somente com causa provável:</strong> componente queimado costuma ter uma razão elétrica por trás.</li>
-        <li><strong>Documente:</strong> anote medições, peças substituídas e resultado do teste.</li>
+    <section id="roteiro">
+      <h2>6. Roteiro de evolução</h2>
+      <ol class="timeline">
+        <li><strong>Semana 1:</strong> segurança, Lei de Ohm, leitura de resistores e continuidade.</li>
+        <li><strong>Semana 2:</strong> tensão DC, polaridade, LEDs, diodos e fonte limitada em corrente.</li>
+        <li><strong>Semana 3:</strong> capacitores, transistores, relés e montagem simples em protoboard.</li>
+        <li><strong>Semana 4:</strong> diagnóstico por blocos: entrada, proteção, regulação, controle e saída.</li>
+        <li><strong>Depois:</strong> osciloscópio, soldagem, placas reais, documentação e projetos próprios.</li>
       </ol>
       <div class="ok">
         Melhor abordagem: medir primeiro, trocar depois. Diagnóstico por tentativa costuma gastar peça, tempo e pode esconder
         a causa real do defeito.
       </div>
     </section>
-
-    <section id="projetos">
-      <h2>11. Ramificações do projeto</h2>
-      <p>
-        Estas são divisões sugeridas para evoluir o projeto sem bagunça. Cada ramificação pode virar uma página própria,
-        uma pasta no repositório ou uma seção futura.
-      </p>
-      <div class="grid">
-        <article class="card"><h3>01 - Fundamentos</h3><ul><li>Lei de Ohm</li><li>Potência</li><li>Série e paralelo</li><li>Leis de Kirchhoff</li></ul></article>
-        <article class="card"><h3>02 - Componentes</h3><ul><li>Passivos: resistor, capacitor, indutor</li><li>Semicondutores: diodo, LED, transistor</li><li>Eletromecânicos: relé, chave, motor</li></ul></article>
-        <article class="card"><h3>03 - Medição</h3><ul><li>Multímetro</li><li>Fonte de bancada</li><li>Osciloscópio</li><li>Capacímetro/LCR</li></ul></article>
-        <article class="card"><h3>04 - Fontes</h3><ul><li>Retificação</li><li>Filtragem</li><li>Regulação</li><li>Proteção contra curto</li></ul></article>
-        <article class="card"><h3>05 - Sensores</h3><ul><li>NTC/PTC</li><li>LDR</li><li>Sensor de corrente</li><li>Sensor de tensão</li></ul></article>
-        <article class="card"><h3>06 - Projetos práticos</h3><ul><li>Fonte DC simples de bancada</li><li>Testador de continuidade</li><li>Controle de LED com transistor</li><li>Acionamento de relé em baixa tensão</li></ul></article>
-      </div>
-    </section>
   </main>
 
   <footer>
     <div class="container">
-      <p>EletroBásica — índice inicial para estudo, teste e documentação de eletrônica.</p>
+      <p>EletroBásica — estudo, teste e documentação de eletrônica para iniciantes.</p>
     </div>
   </footer>
 

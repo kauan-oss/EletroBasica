@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EletroBásica | Multímetro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container hero-layout">
+      <div>
+        <span class="tag">Medição</span>
+        <h1>Multímetro: guia prático e técnico</h1>
+        <p>
+          Entenda bornes, escalas, modos de medição, interpretação de leituras e erros que podem queimar fusível,
+          componente ou o próprio instrumento.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Tensão</span>
+          <span class="pill">Corrente</span>
+          <span class="pill">Resistência</span>
+          <span class="pill">Continuidade</span>
+          <span class="pill">Diodo</span>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Digital_Multimeter_Aka.jpg/250px-Digital_Multimeter_Aka.jpg" alt="Multímetro digital" />
+      </figure>
+    </div>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <div class="container">
+      <a href="index.html">Início</a>
+      <a href="multimetro.html#partes">Partes</a>
+      <a href="multimetro.html#funcoes">Funções</a>
+      <a href="multimetro.html#procedimentos">Procedimentos</a>
+      <a href="multimetro.html#erros">Erros críticos</a>
+      <a href="componentes.html">Componentes</a>
+      <a href="testes.html">Testes</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="partes">
+      <h2>1. Partes do multímetro</h2>
+      <div class="grid">
+        <article class="card"><h3>Display</h3><p>Mostra valor, unidade, sinal negativo, indicação de fora de escala (<code>OL</code>) e, em alguns modelos, barra gráfica.</p></article>
+        <article class="card"><h3>Seletor</h3><p>Escolhe a grandeza. Em modelos manuais, também define a faixa máxima esperada, por exemplo 2 V, 20 V ou 200 V.</p></article>
+        <article class="card"><h3>Bornes</h3><p><code>COM</code> é a referência comum; <code>VΩHz</code> mede tensão, resistência, continuidade e diodo; <code>mA</code> e <code>10A</code> são para corrente.</p></article>
+        <article class="card"><h3>Pontas de prova</h3><p>A ponta preta geralmente fica no COM. A ponta vermelha muda de borne conforme a medição. Pontas finas reduzem risco de curto.</p></article>
+      </div>
+    </section>
+
+    <section id="funcoes">
+      <h2>2. O que cada função mede</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Função</th><th>Uso correto</th><th>Leitura esperada</th><th>Observação</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Tensão DC</td><td>Medir em paralelo entre ponto positivo e GND.</td><td>Valor positivo ou negativo conforme polaridade.</td><td>Ideal para baterias, fontes e reguladores.</td></tr>
+            <tr><td>Tensão AC</td><td>Medir em paralelo em sinais alternados.</td><td>Valor eficaz aproximado em multímetros comuns.</td><td>Rede elétrica exige categoria CAT adequada e supervisão.</td></tr>
+            <tr><td>Resistência</td><td>Circuito desligado, componente isolado quando possível.</td><td>Valor em Ω, kΩ ou MΩ.</td><td>Outros componentes em paralelo podem alterar a leitura.</td></tr>
+            <tr><td>Continuidade</td><td>Checar se há caminho elétrico entre dois pontos.</td><td>Bipe ou baixa resistência.</td><td>Útil para cabos, fusíveis, trilhas e chaves.</td></tr>
+            <tr><td>Diodo</td><td>Testar queda direta de diodo, LED e junções.</td><td>Silício costuma ficar perto de 0,6 V a 0,7 V.</td><td>LED pode exigir tensão maior para acender levemente.</td></tr>
+            <tr><td>Corrente</td><td>Abrir o circuito e colocar o multímetro em série com a carga.</td><td>Consumo em µA, mA ou A.</td><td>Nunca medir corrente em paralelo com uma fonte.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="procedimentos">
+      <h2>3. Procedimentos de medição</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Medir uma bateria</h3>
+          <ol>
+            <li>Selecione tensão DC.</li>
+            <li>Preta no COM e vermelha no VΩ.</li>
+            <li>Encoste vermelho no positivo e preto no negativo.</li>
+            <li>Compare o valor com a tensão nominal da bateria.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>Procurar curto em placa</h3>
+          <ol>
+            <li>Desligue a placa e descarregue capacitores.</li>
+            <li>Use continuidade ou resistência.</li>
+            <li>Meça entre VCC e GND.</li>
+            <li>Resistência muito baixa pode indicar curto ou carga pesada.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>Medir consumo</h3>
+          <ol>
+            <li>Comece no borne de maior corrente, como 10A, se não souber o consumo.</li>
+            <li>Abra o circuito para inserir o multímetro em série.</li>
+            <li>Ligue por pouco tempo e observe se o valor é seguro.</li>
+            <li>Depois reduza para mA apenas se o consumo for compatível.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section id="erros">
+      <h2>4. Erros críticos e como evitar</h2>
+      <div class="danger">
+        O erro mais perigoso para iniciantes é deixar a ponta vermelha no borne de corrente e tentar medir tensão. Isso pode
+        criar curto direto entre os pontos medidos.
+      </div>
+      <ul>
+        <li>Depois de medir corrente, volte imediatamente a ponta vermelha para <code>VΩ</code>.</li>
+        <li>Não confie apenas no seletor: confira também o borne onde a ponta está conectada.</li>
+        <li>Use escala acima do valor esperado quando o multímetro não for automático.</li>
+        <li>Não use modo resistência, continuidade ou diodo em circuito energizado.</li>
+        <li>Se aparecer <code>OL</code>, o circuito pode estar aberto, fora de escala ou com resistência muito alta.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer><div class="container"><p><a href="index.html">Voltar ao índice</a></p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

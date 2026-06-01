@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EletroBásica | Componentes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container hero-layout">
+      <div>
+        <span class="tag">Componentes</span>
+        <h1>Identificação, função e falhas comuns</h1>
+        <p>
+          Um guia para reconhecer componentes, entender sua função no circuito e escolher o primeiro teste com multímetro.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Passivos</span>
+          <span class="pill">Semicondutores</span>
+          <span class="pill">Sensores</span>
+          <span class="pill">Proteção</span>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Electronic_components.jpg/320px-Electronic_components.jpg" alt="Componentes eletrônicos variados" />
+      </figure>
+    </div>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <div class="container">
+      <a href="index.html">Início</a>
+      <a href="componentes.html#passivos">Passivos</a>
+      <a href="componentes.html#semicondutores">Semicondutores</a>
+      <a href="componentes.html#eletromecanicos">Eletromecânicos</a>
+      <a href="componentes.html#sensores">Sensores</a>
+      <a href="multimetro.html">Multímetro</a>
+      <a href="testes.html">Testes</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="passivos">
+      <h2>1. Componentes passivos</h2>
+      <div class="grid">
+        <article class="card"><h3>Resistor</h3><p>Limita corrente, divide tensão e polariza semicondutores. Falhas comuns: aberto, valor alterado por aquecimento ou escurecimento.</p><p><strong>Teste:</strong> circuito desligado, escala de resistência, preferencialmente com um terminal fora da placa.</p></article>
+        <article class="card"><h3>Capacitor</h3><p>Armazena carga, filtra ripple, acopla sinais e estabiliza alimentação. Eletrolíticos têm polaridade e podem estufar.</p><p><strong>Teste:</strong> inspeção visual, capacitância com componente descarregado e ESR quando houver medidor adequado.</p></article>
+        <article class="card"><h3>Indutor</h3><p>Armazena energia em campo magnético e se opõe a variações rápidas de corrente. Aparece em filtros, fontes e conversores.</p><p><strong>Teste:</strong> continuidade da bobina e comparação com resistência típica; curto entre espiras exige instrumentos melhores.</p></article>
+      </div>
+    </section>
+
+    <section id="semicondutores">
+      <h2>2. Semicondutores</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Componente</th><th>Função</th><th>Sinais de falha</th><th>Teste inicial</th></tr></thead>
+          <tbody>
+            <tr><td>Diodo</td><td>Conduz em um sentido e bloqueia no outro.</td><td>Curto nos dois sentidos ou aberto nos dois sentidos.</td><td>Modo diodo: queda direta e bloqueio reverso.</td></tr>
+            <tr><td>LED</td><td>Emite luz quando polarizado diretamente com corrente limitada.</td><td>Não acende, curto ou encapsulamento escurecido.</td><td>Modo diodo ou fonte com resistor em série.</td></tr>
+            <tr><td>Transistor BJT</td><td>Amplifica ou chaveia corrente entre coletor e emissor.</td><td>Curto entre terminais, fuga ou ganho baixo.</td><td>Testar junções base-emissor e base-coletor como diodos.</td></tr>
+            <tr><td>MOSFET</td><td>Chaveia cargas com controle por tensão no gate.</td><td>Curto entre dreno e source, gate perfurado.</td><td>Procurar curto D-S e comparar com peça conhecida.</td></tr>
+            <tr><td>Regulador</td><td>Mantém tensão de saída estável.</td><td>Saída zerada, alta demais ou aquecimento anormal.</td><td>Medir entrada, saída e GND com tensão DC.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="eletromecanicos">
+      <h2>3. Eletromecânicos e proteção</h2>
+      <div class="grid">
+        <article class="card"><h3>Relé</h3><p>Usa uma bobina para acionar contatos. Teste a resistência da bobina e a continuidade dos contatos NA/NF durante acionamento.</p></article>
+        <article class="card"><h3>Chave e botão</h3><p>Abrem ou fecham caminho elétrico. Teste em continuidade observando se o contato muda de estado sem falhas intermitentes.</p></article>
+        <article class="card"><h3>Fusível</h3><p>Protege contra corrente excessiva. Fusível aberto indica falha a investigar; trocar sem achar a causa pode repetir a queima.</p></article>
+        <article class="card"><h3>Conector</h3><p>Falhas por oxidação, folga ou solda trincada são comuns. Inspeção visual e teste de continuidade ajudam muito.</p></article>
+      </div>
+    </section>
+
+    <section id="sensores">
+      <h2>4. Sensores básicos</h2>
+      <ul>
+        <li><strong>LDR:</strong> resistência diminui com luz; teste comparando claro e escuro.</li>
+        <li><strong>NTC:</strong> resistência diminui com aumento de temperatura; usado em fontes, baterias e controle térmico.</li>
+        <li><strong>PTC:</strong> resistência aumenta com temperatura; pode atuar em proteção.</li>
+        <li><strong>Sensor Hall:</strong> responde a campo magnético; geralmente precisa de alimentação para teste correto.</li>
+      </ul>
+      <div class="notice">Regra prática: primeiro identifique pinos, polaridade e tensão máxima. Depois escolha se o teste é passivo ou energizado.</div>
+    </section>
+  </main>
+
+  <footer><div class="container"><p><a href="index.html">Voltar ao índice</a></p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

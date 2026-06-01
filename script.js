@@ -20,8 +20,17 @@ function updateTopButton() {
   }
 }
 
+function getLinkPathAndHash(link) {
+  const linkUrl = new URL(link.getAttribute('href'), window.location.href);
+  return {
+    hash: linkUrl.hash,
+    path: linkUrl.pathname.split('/').pop() || 'index.html',
+  };
+}
+
 function updateActiveLink() {
   let currentSectionId = '';
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop - 110;
@@ -32,9 +41,12 @@ function updateActiveLink() {
   });
 
   navLinks.forEach((link) => {
-    const href = link.getAttribute('href');
-    const isActive = href === `#${currentSectionId}`;
-    link.classList.toggle('nav-active', isActive);
+    const { hash, path } = getLinkPathAndHash(link);
+    const pointsToCurrentPage = path === currentPath;
+    const isSectionLink = hash === `#${currentSectionId}`;
+    const isPageLink = !hash && pointsToCurrentPage;
+
+    link.classList.toggle('nav-active', pointsToCurrentPage && (isSectionLink || isPageLink));
   });
 }
 
