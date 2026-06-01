@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EletroBásica | Testes de Bancada</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container hero-layout">
+      <div>
+        <span class="tag">Laboratório</span>
+        <h1>Testes práticos e diagnóstico</h1>
+        <p>
+          Roteiros seguros para transformar teoria em prática: continuidade, curto, fonte DC, LEDs, sensores e registro de medições.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Checklist</span>
+          <span class="pill">Bancada</span>
+          <span class="pill">Baixa tensão</span>
+          <span class="pill">Registro</span>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Electronics_workbench.jpg/320px-Electronics_workbench.jpg" alt="Bancada de eletrônica" />
+      </figure>
+    </div>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <div class="container">
+      <a href="index.html">Início</a>
+      <a href="testes.html#preparacao">Preparação</a>
+      <a href="testes.html#roteiros">Roteiros</a>
+      <a href="testes.html#diagnostico">Diagnóstico</a>
+      <a href="testes.html#registro">Registro</a>
+      <a href="multimetro.html">Multímetro</a>
+      <a href="componentes.html">Componentes</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="preparacao">
+      <h2>1. Preparação da bancada</h2>
+      <div class="grid">
+        <article class="card"><h3>Antes de energizar</h3><ul><li>Inspecione polaridade, soldas e trilhas.</li><li>Confira curto entre positivo e GND.</li><li>Defina tensão e limite de corrente na fonte.</li></ul></article>
+        <article class="card"><h3>Ferramentas mínimas</h3><ul><li>Multímetro digital.</li><li>Fonte DC ajustável com limitação de corrente.</li><li>Protoboard, resistores, jumpers e LEDs.</li></ul></article>
+        <article class="card"><h3>Organização</h3><ul><li>Separe componentes por valor.</li><li>Anote o circuito antes de alterar.</li><li>Fotografe a placa se houver muitos fios.</li></ul></article>
+      </div>
+    </section>
+
+    <section id="roteiros">
+      <h2>2. Roteiros práticos</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Teste</th><th>Passos</th><th>Resultado esperado</th><th>Se der errado</th></tr></thead>
+          <tbody>
+            <tr><td>Continuidade de cabo</td><td>Modo continuidade; uma ponta em cada extremidade do mesmo fio.</td><td>Bipe e baixa resistência.</td><td>Procure rompimento, mau contato ou conector oxidado.</td></tr>
+            <tr><td>LED com resistor</td><td>Fonte 5 V, resistor de 330 Ω a 1 kΩ em série, LED polarizado corretamente.</td><td>LED aceso sem aquecimento.</td><td>Inverta polaridade do LED ou confira resistor e fonte.</td></tr>
+            <tr><td>Divisor de tensão</td><td>Dois resistores em série entre VCC e GND; medir o ponto central.</td><td>Tensão proporcional aos valores dos resistores.</td><td>Revise ligação em série/paralelo e valor real dos resistores.</td></tr>
+            <tr><td>Fonte DC</td><td>Medir saída sem carga e depois com carga resistiva.</td><td>Tensão próxima da nominal e queda pequena com carga.</td><td>Verifique limite de corrente, aquecimento e capacitor de filtro.</td></tr>
+            <tr><td>Sensor resistivo</td><td>Medir resistência em duas condições físicas diferentes.</td><td>Variação coerente, como LDR claro/escuro ou NTC frio/quente.</td><td>Confira se o sensor é realmente resistivo ou se exige alimentação.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="diagnostico">
+      <h2>3. Diagnóstico por blocos</h2>
+      <ol class="timeline">
+        <li><strong>Entrada:</strong> confirme conector, fusível, chave e proteção contra inversão.</li>
+        <li><strong>Alimentação:</strong> meça reguladores, ripple aparente e curto entre trilhas de alimentação.</li>
+        <li><strong>Controle:</strong> verifique microcontrolador, clock, reset e sinais básicos.</li>
+        <li><strong>Saída:</strong> teste transistores, relés, motores, LEDs e conectores.</li>
+        <li><strong>Comparação:</strong> compare com circuito bom, datasheet ou valor calculado.</li>
+      </ol>
+      <div class="ok">Sempre divida o problema: se a alimentação está errada, não faz sentido culpar o bloco de controle antes de corrigir a base.</div>
+    </section>
+
+    <section id="registro">
+      <h2>4. Modelo de registro de teste</h2>
+      <div class="card">
+        <pre><code>Data:
+Circuito ou placa:
+Sintoma observado:
+Fonte usada:
+Limite de corrente:
+Medições principais:
+Componentes suspeitos:
+Ação feita:
+Resultado após a ação:</code></pre>
+      </div>
+      <p>
+        Registrar medições evita repetir erro, facilita pedir ajuda e mostra evolução técnica. Em manutenção real, uma boa
+        anotação vale tanto quanto trocar a peça certa.
+      </p>
+    </section>
+  </main>
+
+  <footer><div class="container"><p><a href="index.html">Voltar ao índice</a></p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
