@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EletroBásica | Índice do Projeto</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --line: #334155;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --code: #020617;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, var(--bg) 45%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 48px 20px 32px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(34, 197, 94, 0.08));
+    }
+
+    .container {
+      width: min(1120px, 100% - 32px);
+      margin: 0 auto;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 12px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      margin-bottom: 16px;
+      color: #f8fafc;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #f8fafc;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .container {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 12px 0;
+    }
+
+    nav a {
+      white-space: nowrap;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    main {
+      padding: 36px 0 64px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 28px;
+      background: rgba(17, 24, 39, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(31, 41, 55, 0.95), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .card strong {
+      color: #f8fafc;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(56, 189, 248, 0.12);
+      color: #f8fafc;
+    }
+
+    td {
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    code {
+      display: inline-block;
+      padding: 2px 6px;
+      background: var(--code);
+      color: #bfdbfe;
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9em;
+    }
+
+    .notice {
+      padding: 16px;
+      border-left: 5px solid var(--warning);
+      background: rgba(245, 158, 11, 0.11);
+      border-radius: 12px;
+      color: #fde68a;
+      margin: 18px 0;
+    }
+
+    .danger {
+      padding: 16px;
+      border-left: 5px solid var(--danger);
+      background: rgba(239, 68, 68, 0.11);
+      border-radius: 12px;
+      color: #fecaca;
+      margin: 18px 0;
+    }
+
+    .ok {
+      padding: 16px;
+      border-left: 5px solid var(--accent-2);
+      background: rgba(34, 197, 94, 0.10);
+      border-radius: 12px;
+      color: #bbf7d0;
+      margin: 18px 0;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 20px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <span class="tag">EletroBásica</span>
+      <h1>Índice técnico do projeto</h1>
+      <p>
+        Um guia central para organizar o estudo e a prática de eletrônica: ferramentas, componentes, testes,
+        base teórica, física aplicada e roteiro seguro de diagnóstico.
+      </p>
+    </div>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <div class="container">
+      <a href="#visao-geral">Visão geral</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#componentes">Componentes</a>
+      <a href="#testes">Testes</a>
+      <a href="#eletronica">Base eletrônica</a>
+      <a href="#fisica">Física aplicada</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#projetos">Ramificações</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="visao-geral">
+      <h2>1. Visão geral</h2>
+      <p>
+        Este projeto funciona como uma árvore de conhecimento. A ideia é separar a eletrônica em blocos: teoria,
+        ferramentas, componentes, testes práticos e aplicações. Isso evita estudar tudo misturado e facilita encontrar
+        exatamente o que precisa na hora de montar ou diagnosticar um circuito.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Objetivo</h3>
+          <p>Montar uma base técnica para entender, testar e documentar componentes e circuitos eletrônicos.</p>
+        </article>
+        <article class="card">
+          <h3>Método</h3>
+          <p>Estudar por módulos: conceito, identificação visual, função no circuito, falhas comuns e teste seguro.</p>
+        </article>
+        <article class="card">
+          <h3>Aplicação</h3>
+          <p>Uso em manutenção, prototipagem, placas eletrônicas simples, sensores, fontes e sistemas de baixa tensão.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="seguranca">
+      <h2>2. Segurança antes de testar</h2>
+      <div class="danger">
+        Não faça testes energizados diretamente na tomada, rede 127/220 V, fontes chaveadas abertas, micro-ondas,
+        capacitores grandes ou circuitos de alta tensão sem supervisão técnica adequada. O foco deste guia é baixa tensão
+        e verificação com o equipamento desligado sempre que possível.
+      </div>
+      <ul>
+        <li>Antes de medir resistência, continuidade ou diodo, desligue o circuito e remova a alimentação.</li>
+        <li>Não coloque o multímetro em escala de corrente diretamente em paralelo com uma fonte ou tomada.</li>
+        <li>Use fonte de bancada com limitação de corrente para testes em baixa tensão.</li>
+        <li>Confirme a escala correta no multímetro antes de encostar as pontas de prova.</li>
+        <li>Em placas desconhecidas, comece por inspeção visual e testes sem alimentação.</li>
+        <li>Capacitores podem manter carga após desligados. Verifique tensão nos terminais antes de tocar.</li>
+      </ul>
+    </section>
+
+    <section id="ferramentas">
+      <h2>3. Ferramentas necessárias</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Básicas</h3>
+          <ul>
+            <li>Multímetro digital com escala de tensão, resistência, continuidade e diodo.</li>
+            <li>Fonte de bancada DC com ajuste de tensão e limitação de corrente.</li>
+            <li>Protoboard, jumpers e kit de resistores.</li>
+            <li>Alicate de corte, alicate de bico e desencapador.</li>
+            <li>Chaves, pinças e lupa.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Soldagem</h3>
+          <ul>
+            <li>Ferro de solda com suporte.</li>
+            <li>Estanho para eletrônica.</li>
+            <li>Fluxo, malha dessoldadora ou sugador.</li>
+            <li>Esponja metálica ou úmida para limpeza da ponta.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Diagnóstico avançado</h3>
+          <ul>
+            <li>Osciloscópio para visualizar sinais.</li>
+            <li>Capacímetro ou medidor LCR.</li>
+            <li>Gerador de sinais.</li>
+            <li>Carga eletrônica ou resistor de potência para testar fontes DC.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Proteção</h3>
+          <ul>
+            <li>Óculos de proteção.</li>
+            <li>Tapete antiestático, se disponível.</li>
+            <li>Organizador de peças.</li>
+            <li>Ambiente seco, limpo e bem iluminado.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="componentes">
+      <h2>4. Tipos de componentes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Função</th>
+            <th>Falhas comuns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Resistor</td>
+            <td>Limita corrente, divide tensão e polariza circuitos.</td>
+            <td>Aberto, valor alterado, superaquecimento.</td>
+          </tr>
+          <tr>
+            <td>Potenciômetro</td>
+            <td>Resistência variável para ajuste de sinal, volume ou referência.</td>
+            <td>Mau contato, trilha gasta, variação instável.</td>
+          </tr>
+          <tr>
+            <td>Capacitor</td>
+            <td>Armazena carga, filtra ripple, acopla sinais e temporiza.</td>
+            <td>Curto, fuga, ESR alto, capacitância baixa.</td>
+          </tr>
+          <tr>
+            <td>Diodo</td>
+            <td>Conduz em um sentido e bloqueia no outro.</td>
+            <td>Curto, aberto, fuga reversa.</td>
+          </tr>
+          <tr>
+            <td>LED</td>
+            <td>Emite luz quando polarizado corretamente.</td>
+            <td>Aberto, queimado por excesso de corrente.</td>
+          </tr>
+          <tr>
+            <td>Transistor BJT</td>
+            <td>Amplifica corrente ou atua como chave eletrônica.</td>
+            <td>Junção em curto, aberto, fuga entre terminais.</td>
+          </tr>
+          <tr>
+            <td>MOSFET</td>
+            <td>Chaveamento eficiente controlado por tensão no gate.</td>
+            <td>Curto entre drain-source, gate danificado por estática.</td>
+          </tr>
+          <tr>
+            <td>Relé</td>
+            <td>Chave eletromecânica acionada por bobina.</td>
+            <td>Bobina aberta, contatos carbonizados, travamento mecânico.</td>
+          </tr>
+          <tr>
+            <td>Fusível</td>
+            <td>Protege contra sobrecorrente.</td>
+            <td>Aberto por falha real ou dimensionamento inadequado.</td>
+          </tr>
+          <tr>
+            <td>Sensor NTC/PTC</td>
+            <td>Resistência dependente da temperatura.</td>
+            <td>Aberto, valor fora da curva, mau contato.</td>
+          </tr>
+          <tr>
+            <td>Regulador de tensão</td>
+            <td>Mantém tensão de saída estável.</td>
+            <td>Saída baixa, aquecimento, curto interno.</td>
+          </tr>
+          <tr>
+            <td>Microcontrolador</td>
+            <td>Executa lógica programada e controla entradas/saídas.</td>
+            <td>Alimentação incorreta, porta queimada, firmware ausente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="testes">
+      <h2>5. Como testar cada componente</h2>
+      <p>
+        Os testes abaixo são uma base prática. Sempre que possível, teste o componente fora do circuito, porque outros
+        componentes em paralelo podem alterar a leitura.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Ferramenta</th>
+            <th>Teste seguro</th>
+            <th>Resultado esperado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Resistor</td>
+            <td>Multímetro em Ω</td>
+            <td>Medir entre os dois terminais com circuito desligado.</td>
+            <td>Valor próximo ao código de cores ou valor impresso, dentro da tolerância.</td>
+          </tr>
+          <tr>
+            <td>Potenciômetro</td>
+            <td>Multímetro em Ω</td>
+            <td>Medir extremos para valor total e cursor para variação.</td>
+            <td>Variação progressiva, sem saltos bruscos ou interrupções.</td>
+          </tr>
+          <tr>
+            <td>Diodo comum</td>
+            <td>Escala de diodo</td>
+            <td>Medir direto e reverso.</td>
+            <td>Conduz em um sentido, geralmente 0,5 a 0,8 V em diodo de silício, e bloqueia no outro.</td>
+          </tr>
+          <tr>
+            <td>LED</td>
+            <td>Escala de diodo ou fonte DC limitada</td>
+            <td>Testar com corrente limitada e resistor em série.</td>
+            <td>Acende apenas na polarização correta.</td>
+          </tr>
+          <tr>
+            <td>Capacitor pequeno</td>
+            <td>Capacímetro/LCR</td>
+            <td>Verificar capacitância e, se possível, ESR.</td>
+            <td>Valor próximo ao nominal. Curto entre terminais indica defeito.</td>
+          </tr>
+          <tr>
+            <td>Transistor BJT</td>
+            <td>Escala de diodo</td>
+            <td>Testar junções base-emissor e base-coletor.</td>
+            <td>Comportamento parecido com dois diodos ligados à base.</td>
+          </tr>
+          <tr>
+            <td>MOSFET</td>
+            <td>Multímetro + circuito simples de teste</td>
+            <td>Verificar curto drain-source e resposta ao gate em baixa tensão.</td>
+            <td>Sem curto direto entre drain-source. Gate não deve ter continuidade direta com os demais terminais.</td>
+          </tr>
+          <tr>
+            <td>Relé</td>
+            <td>Multímetro + fonte DC compatível</td>
+            <td>Medir bobina e acionar com tensão nominal em corrente limitada.</td>
+            <td>Bobina com resistência definida e contatos alternando entre NA/NF.</td>
+          </tr>
+          <tr>
+            <td>Fusível</td>
+            <td>Continuidade</td>
+            <td>Medir fora do circuito ou com equipamento desligado.</td>
+            <td>Fusível bom apresenta continuidade; aberto indica queima.</td>
+          </tr>
+          <tr>
+            <td>Chave/botão</td>
+            <td>Continuidade</td>
+            <td>Medir terminais enquanto aciona.</td>
+            <td>Alterna corretamente entre aberto e fechado.</td>
+          </tr>
+          <tr>
+            <td>Sensor NTC</td>
+            <td>Multímetro em Ω</td>
+            <td>Medir resistência em temperatura ambiente e observar variação com leve aquecimento externo seguro.</td>
+            <td>NTC reduz resistência quando a temperatura sobe.</td>
+          </tr>
+          <tr>
+            <td>Regulador DC</td>
+            <td>Fonte DC + multímetro</td>
+            <td>Aplicar tensão de entrada compatível em baixa tensão e medir saída.</td>
+            <td>Saída estável no valor nominal, respeitando corrente e dissipação.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="notice">
+        Em manutenção real, uma peça que queimou pode ser consequência, não causa. Trocar fusível, resistor ou transistor
+        sem procurar curto, sobrecarga ou erro de alimentação pode fazer o defeito voltar imediatamente.
+      </div>
+    </section>
+
+    <section id="eletronica">
+      <h2>6. Base da eletrônica</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Tensão, corrente e resistência</h3>
+          <p>
+            Tensão é diferença de potencial elétrico. Corrente é fluxo de carga. Resistência é oposição à passagem da
+            corrente. A relação central é a Lei de Ohm: <code>V = R × I</code>.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Potência elétrica</h3>
+          <p>
+            Potência indica a taxa de conversão de energia. Fórmulas úteis: <code>P = V × I</code>, <code>P = R × I²</code>
+            e <code>P = V² / R</code>. Resistores e reguladores aquecem quando dissipam potência.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Série e paralelo</h3>
+          <p>
+            Em série, a corrente é a mesma e as tensões se dividem. Em paralelo, a tensão é a mesma e as correntes se
+            dividem entre os ramos.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Corrente contínua e alternada</h3>
+          <p>
+            DC tem polaridade definida. AC varia no tempo. Circuitos eletrônicos geralmente trabalham em DC depois de
+            retificação, filtragem e regulação.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Leis de Kirchhoff</h3>
+          <p>
+            A soma das correntes em um nó é conservada. A soma das tensões em uma malha fechada também fecha o balanço
+            elétrico. Isso permite analisar circuitos sem adivinhação.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Sinal, ruído e referência</h3>
+          <p>
+            Todo sinal é medido em relação a uma referência, normalmente GND. Ruído pode vir de fonte ruim, aterramento
+            mal feito, chaveamento ou cabos longos.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="fisica">
+      <h2>7. Física aplicada à eletrônica</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Conceito físico</th>
+            <th>Ligação com eletrônica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Carga elétrica</td>
+            <td>É a propriedade que permite interação elétrica. Em condutores metálicos, elétrons livres participam da corrente.</td>
+          </tr>
+          <tr>
+            <td>Campo elétrico</td>
+            <td>É o que força cargas a se moverem quando há diferença de potencial.</td>
+          </tr>
+          <tr>
+            <td>Energia potencial elétrica</td>
+            <td>Explica por que tensão representa energia por unidade de carga.</td>
+          </tr>
+          <tr>
+            <td>Efeito Joule</td>
+            <td>Corrente em resistência gera calor. É essencial para entender aquecimento, perdas e queima de componentes.</td>
+          </tr>
+          <tr>
+            <td>Magnetismo</td>
+            <td>Corrente elétrica cria campo magnético. Isso aparece em relés, motores, transformadores e indutores.</td>
+          </tr>
+          <tr>
+            <td>Indução eletromagnética</td>
+            <td>Variação de campo magnético pode gerar tensão. Base de transformadores, bobinas e motores.</td>
+          </tr>
+          <tr>
+            <td>Capacitância</td>
+            <td>Capacitores armazenam energia em campo elétrico e se opõem a variações bruscas de tensão.</td>
+          </tr>
+          <tr>
+            <td>Semicondutores</td>
+            <td>Diodos, transistores e CIs usam materiais cuja condução pode ser controlada por dopagem e polarização.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="diagnostico">
+      <h2>8. Roteiro de diagnóstico</h2>
+      <ol>
+        <li><strong>Identifique o sintoma:</strong> não liga, liga e desliga, aquece, não carrega, saída instável, ruído ou componente queimado.</li>
+        <li><strong>Inspecione visualmente:</strong> trilha rompida, solda fria, oxidação, capacitor estufado, componente escurecido.</li>
+        <li><strong>Teste alimentação:</strong> verifique entrada, reguladores, curto entre VCC e GND e consumo anormal.</li>
+        <li><strong>Divida em blocos:</strong> fonte, controle, potência, sensores, comunicação e saída.</li>
+        <li><strong>Compare com valor esperado:</strong> tensão nominal, resistência típica, queda de diodo, continuidade e sinal.</li>
+        <li><strong>Troque somente com causa provável:</strong> componente queimado costuma ter uma razão elétrica por trás.</li>
+        <li><strong>Documente:</strong> anote medições, peças substituídas e resultado do teste.</li>
+      </ol>
+      <div class="ok">
+        Melhor abordagem: medir primeiro, trocar depois. Diagnóstico por tentativa costuma gastar peça, tempo e pode esconder
+        a causa real do defeito.
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2>9. Ramificações do projeto</h2>
+      <p>
+        Estas são divisões sugeridas para evoluir o projeto sem bagunça. Cada ramificação pode virar uma página própria,
+        uma pasta no repositório ou uma seção futura.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>01 - Fundamentos</h3>
+          <ul>
+            <li>Lei de Ohm</li>
+            <li>Potência</li>
+            <li>Série e paralelo</li>
+            <li>Leis de Kirchhoff</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>02 - Componentes</h3>
+          <ul>
+            <li>Passivos: resistor, capacitor, indutor</li>
+            <li>Semicondutores: diodo, LED, transistor</li>
+            <li>Eletromecânicos: relé, chave, motor</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>03 - Medição</h3>
+          <ul>
+            <li>Multímetro</li>
+            <li>Fonte de bancada</li>
+            <li>Osciloscópio</li>
+            <li>Capacímetro/LCR</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>04 - Fontes</h3>
+          <ul>
+            <li>Retificação</li>
+            <li>Filtragem</li>
+            <li>Regulação</li>
+            <li>Proteção contra curto</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>05 - Sensores</h3>
+          <ul>
+            <li>NTC/PTC</li>
+            <li>LDR</li>
+            <li>Sensor de corrente</li>
+            <li>Sensor de tensão</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>06 - Projetos práticos</h3>
+          <ul>
+            <li>Fonte DC simples de bancada</li>
+            <li>Testador de continuidade</li>
+            <li>Controle de LED com transistor</li>
+            <li>Acionamento de relé em baixa tensão</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>EletroBásica — índice inicial para estudo, teste e documentação de eletrônica.</p>
+    </div>
+  </footer>
+</body>
+</html>
